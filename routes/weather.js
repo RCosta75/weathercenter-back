@@ -86,6 +86,7 @@ router.get("/getOne/:city" , (req,res) => {
   fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${OWM_API_KEY}&units=metric`)
   .then((response) => response.json())
   .then((apiData) => {
+    
     if(apiData.main){
       const newCity = {
         main : apiData?.weather[0]?.main,

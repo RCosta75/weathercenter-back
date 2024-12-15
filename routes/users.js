@@ -58,6 +58,7 @@ router.get('/cities/:token', (req, res) => {
   User.findOne({ token: req.params.token })
     .populate("cities")
     .then((data) => {
+      console.log(data)
       if (!data) {
         return res.json({ result: false, info: "User not found" });
       }
